@@ -1,0 +1,297 @@
+/* Scoped design system for the /heritage page. Every rule is namespaced under
+   .heritage-page so nothing here can leak into or be affected by the main
+   site's tokens, even though Next.js keeps route CSS mounted across client
+   navigations. No dark mode by design — this is a single, fixed palette. */
+
+.heritage-page {
+  --h-bg: #eae0c4;
+  --h-bg-deep: #d7c69b;
+  --h-ink: #2b2620;
+  --h-ink-soft: #5a4e3e;
+  --h-navy: #17264a;
+  --h-navy-deep: #0c1830;
+  --h-border: #c3ae79;
+
+  /* Type scale bumped up one step from Tailwind's defaults (each utility
+     class below now renders at the next size up) so text reads larger
+     across the whole page — overriding the vars every `.text-*` utility
+     reads from, rather than editing every call site. */
+  --text-xs: 0.875rem;
+  --text-sm: 1rem;
+  --text-base: 1.125rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.5rem;
+  --text-2xl: 1.875rem;
+  --text-3xl: 2.25rem;
+  --text-4xl: 3rem;
+  --text-5xl: 3.75rem;
+  --text-6xl: 4.5rem;
+
+  position: relative;
+  isolation: isolate;
+  background-color: var(--h-bg);
+  color: var(--h-ink);
+  font-family: var(--font-cormorant), Georgia, serif;
+  overflow-x: hidden;
+}
+
+.heritage-page .font-display-en {
+  font-family: var(--font-cinzel), serif;
+}
+
+.heritage-page .font-display-hi {
+  font-family: var(--font-rozha), serif;
+}
+
+.heritage-page .font-body-hi {
+  font-family: var(--font-noto-devanagari), serif;
+}
+
+.heritage-page .font-urdu {
+  font-family: var(--font-noto-nastaliq), serif;
+}
+
+/* ---------- Relic surface: paper grain, vignette ---------- */
+
+.heritage-page::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: url("/heritage/paper-grain.svg");
+  background-repeat: repeat;
+  background-size: 180px 180px;
+  mix-blend-mode: multiply;
+  opacity: 0.2;
+}
+
+.heritage-page::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: radial-gradient(120% 100% at 50% 0%, transparent 55%, rgba(43, 38, 32, 0.16) 100%);
+  background-repeat: no-repeat;
+}
+
+/* Tooled-tapestry hero background — a tooled-leather/floral texture,
+   pre-baked (see public/heritage/hero-tapestry.jpg) into a flat duotone of
+   this page's own ink/paper tones instead of its native colour: the tooled
+   (positive) linework renders solid charcoal, the flat field (negative)
+   renders papyrus. Navy is the accent colour only — reserved for
+   headings/buttons/links — so neither tone here is navy. */
+.hero-tapestry-bg {
+  position: relative;
+  background-color: var(--h-bg);
+}
+
+.hero-tapestry-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: url("/heritage/hero-tapestry.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  opacity: 0.45;
+}
+
+.hero-tapestry-bg > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* A solid panel sewn onto the patterned cloth beneath it — used to carry
+   body text where the surrounding trellis pattern would hurt legibility.
+   The dashed stitch-line sits just inside the patch's own edge rather than
+   flush against it, like a seam allowance. */
+.cloth-patch {
+  position: relative;
+  background: var(--h-bg);
+  outline: 1px dashed var(--h-navy);
+  outline-offset: -10px;
+  padding: 1.75rem;
+}
+
+/* Thin, irregular ink-smudge streaks for extra wear */
+.ink-smudge {
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+  height: 2px;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, transparent, rgba(43, 38, 32, 0.16), transparent);
+  filter: blur(1.5px);
+}
+
+/* ---------- Ornamental borders ---------- */
+
+.aged-frame {
+  position: relative;
+  border: 1px solid var(--h-navy);
+  outline: 1px solid var(--h-border);
+  outline-offset: 4px;
+}
+
+.ink-rule {
+  border: none;
+  border-top: 1px solid var(--h-border);
+  height: 1px;
+}
+
+.heritage-page .card {
+  border: 1px solid var(--h-border);
+  background: rgba(255, 252, 240, 0.35);
+}
+
+/* Woven border strip marking the seam where the footer's own cloth begins
+   — a medallion motif drawn from the same tapestry, strung on a thread and
+   tiled (never stretched, so the medallions stay circular). Pulled up by
+   half its own height so the seam cuts every medallion exactly in half:
+   the upper arc sits on the page's papyrus (dark ink, matching that
+   section's contrast) and the lower arc sits on the footer's chocolate
+   (papyrus ink, matching this section's contrast) — baked into the image
+   itself, either side of one transparent PNG. */
+.footer-band {
+  position: relative;
+  z-index: 1;
+  height: 4rem;
+  margin-top: -2rem;
+  background-image: url("/heritage/footer-band.png");
+  background-repeat: repeat-x;
+  background-position: center;
+  background-size: auto 100%;
+}
+
+@media (min-width: 640px) {
+  .footer-band {
+    height: 5.5rem;
+    margin-top: -2.75rem;
+  }
+}
+
+/* A small rotated-square fleuron used between scripts in the loading
+   screen's wordmark row, instead of a plain bullet or middle dot. */
+.script-divider {
+  display: inline-block;
+  flex: none;
+  width: 0.4em;
+  height: 0.4em;
+  border: 1px solid var(--h-navy);
+  background: var(--h-bg);
+  transform: rotate(45deg);
+}
+
+/* ---------- Loading screen ---------- */
+
+.loading-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  background-color: var(--h-bg);
+  transition: opacity 0.4s ease;
+}
+
+/* Its own opaque background sits above the page's ::before texture layer, so
+   it needs the same motifs re-applied directly, split across both
+   pseudo-elements so each can carry its own opacity. */
+
+/* Same tapestry background as the hero, at the same strength, so the
+   loading screen and the page it hands off to feel like one surface. */
+.loading-screen::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: url("/heritage/hero-tapestry.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  opacity: 0.45;
+}
+
+/* Paper grain, thinner and sparser than the page-wide version so the
+   combination with the cloth motif doesn't read as too busy. */
+.loading-screen::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: url("/heritage/paper-grain.svg");
+  background-repeat: repeat;
+  background-size: 180px 180px;
+  background-blend-mode: multiply;
+  opacity: 0.13;
+}
+
+/* Royal progress bar: sharp corners, ray finials at each end instead of rounded caps */
+.royal-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* The track is a hand-dotted stitch guideline; the fill is the thread that
+   sews it shut as it grows, dot by dot, left to right. */
+.royal-bar-track {
+  position: relative;
+  width: 220px;
+  height: 3px;
+  background-image: repeating-linear-gradient(
+    90deg,
+    var(--h-navy) 0,
+    var(--h-navy) 3px,
+    transparent 3px,
+    transparent 9px
+  );
+  background-repeat: repeat-x;
+  opacity: 0.55;
+}
+
+.royal-bar-fill {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  width: 0%;
+  background: var(--h-navy);
+  animation: royal-bar-fill 3s linear forwards;
+}
+
+.royal-bar-fill::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -2.5px;
+  width: 5px;
+  height: 5px;
+  background: var(--h-navy);
+  border-radius: 9999px;
+  transform: translateY(-50%);
+}
+
+@keyframes royal-bar-fill {
+  to {
+    width: 100%;
+  }
+}
+
+.royal-bar-ray {
+  width: 20px;
+  height: 34px;
+  flex: none;
+}
+
+.royal-bar-ray--start {
+  transform: scaleX(-1);
+}

@@ -1,0 +1,242 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #faf6f1;
+  --surface: #ffffff;
+  --surface-tint: #f3e4d8;
+  --primary: #10263a;
+  --accent: #c1622d;
+  --text: #241c18;
+  --text-muted: #6b5d54;
+  --border: #e4d6c8;
+}
+
+[data-theme="dark"] {
+  --bg: #0b1620;
+  --surface: #152232;
+  --surface-tint: #1b3a52;
+  --primary: #f5ede6;
+  --accent: #e07a45;
+  --text: #f5ede6;
+  --text-muted: #b7a99c;
+  --border: #243447;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-tint: var(--surface-tint);
+  --color-primary: var(--primary);
+  --color-accent: var(--accent);
+  --color-text: var(--text);
+  --color-text-muted: var(--text-muted);
+  --color-border: var(--border);
+  --font-sans: var(--font-manrope);
+  --font-serif: var(--font-fraunces);
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-sans), system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .card {
+    border-radius: 1rem;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    padding: 1.5rem;
+    box-shadow:
+      0 1px 3px rgba(16, 38, 58, 0.08),
+      0 8px 24px rgba(16, 38, 58, 0.06);
+  }
+
+  [data-theme="dark"] .card {
+    box-shadow:
+      0 0 0 1px rgba(224, 122, 69, 0.12),
+      0 0 32px rgba(224, 122, 69, 0.08);
+  }
+
+  /* Bullet-flanked uppercase eyebrow label, e.g. "· THE PROBLEM ·" */
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6em;
+    font-family: var(--font-sans), system-ui, sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  .eyebrow::before,
+  .eyebrow::after {
+    content: "";
+    width: 0.3rem;
+    height: 0.3rem;
+    border-radius: 9999px;
+    background: currentColor;
+    opacity: 0.6;
+    flex: none;
+  }
+
+  .heading-serif {
+    font-family: var(--font-serif), Georgia, serif;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: 9999px;
+    padding: 0.75rem 1.75rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition:
+      transform 0.2s ease,
+      background-color 0.2s ease,
+      border-color 0.2s ease,
+      opacity 0.2s ease;
+  }
+
+  .btn:hover {
+    transform: translateY(-1px);
+  }
+
+  .btn-solid {
+    background: var(--accent);
+    color: #fff8f1;
+  }
+
+  .btn-solid:hover {
+    opacity: 0.92;
+  }
+
+  .btn-outline {
+    border: 1px solid var(--border);
+    color: var(--primary);
+  }
+
+  .btn-outline:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  /* Spec-sheet style row: label / value pairs separated by a hairline rule */
+  .spec-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding: 1.1rem 0;
+    border-top: 1px solid var(--border);
+  }
+
+  .spec-row:last-child {
+    border-bottom: 1px solid var(--border);
+  }
+}
+
+.glow {
+  position: relative;
+}
+
+.glow::before {
+  content: "";
+  position: absolute;
+  inset: -40%;
+  background: radial-gradient(circle, var(--accent) 0%, transparent 65%);
+  opacity: 0.16;
+  filter: blur(10px);
+  z-index: -1;
+  pointer-events: none;
+}
+
+[data-theme="dark"] .glow::before {
+  opacity: 0.28;
+}
+
+.bg-diamond-pattern {
+  position: relative;
+  isolation: isolate;
+}
+
+.bg-diamond-pattern::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image: url("/brand/pattern-diamond-light.svg");
+  background-repeat: repeat;
+  background-size: 120px 120px;
+  opacity: 0.5;
+}
+
+[data-theme="dark"] .bg-diamond-pattern::before {
+  background-image: url("/brand/pattern-diamond-dark.svg");
+  opacity: 0.6;
+}
+
+/* Premium polished-leather surface: large organic grain, diamond-stitch
+   quilting, and a soft terracotta sheen. Base tone comes from --surface-tint
+   so it stays on-brand across themes; stitch color flips (dark brown /
+   silver) per theme for contrast against the leather base. */
+.leatherette {
+  background-color: var(--surface-tint);
+  background-image:
+    url("/brand/diamond-stitch-light.svg"),
+    url("/brand/leather-grain.svg");
+  background-repeat: repeat, no-repeat;
+  background-size: 110px 110px, cover;
+  background-position: 0 0, center;
+  background-blend-mode: normal, overlay;
+}
+
+[data-theme="dark"] .leatherette {
+  background-image:
+    url("/brand/diamond-stitch-dark.svg"),
+    url("/brand/leather-grain.svg");
+  background-blend-mode: normal, soft-light;
+}
+
+.leatherette::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.36) 0%,
+      transparent 35%,
+      transparent 65%,
+      rgba(255, 255, 255, 0.12) 100%
+    ),
+    radial-gradient(120% 85% at 50% 0%, var(--accent) 0%, transparent 62%);
+  opacity: 0.4;
+}
+
+[data-theme="dark"] .leatherette::before {
+  opacity: 0.3;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

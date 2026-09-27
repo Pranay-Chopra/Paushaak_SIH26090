@@ -186,6 +186,46 @@
   transform: rotate(45deg);
 }
 
+/* ---------- Video player ---------- */
+
+/* Themed seek bar for the intro video's custom player — the filled/unfilled
+   split is painted inline (per current progress) via the element's own
+   `background`, this just supplies the track height and a themed thumb so
+   the native <input type="range"> reads as part of the page, not the OS. */
+.video-seek {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 4px;
+  border-radius: 9999px;
+  outline: none;
+}
+
+.video-seek::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 13px;
+  height: 13px;
+  border-radius: 9999px;
+  background: var(--h-bg);
+  border: 2px solid var(--h-navy);
+  cursor: pointer;
+}
+
+.video-seek::-moz-range-thumb {
+  width: 13px;
+  height: 13px;
+  border-radius: 9999px;
+  background: var(--h-bg);
+  border: 2px solid var(--h-navy);
+  cursor: pointer;
+}
+
+.video-seek::-moz-range-track {
+  height: 4px;
+  border-radius: 9999px;
+  background: transparent;
+}
+
 /* ---------- Loading screen ---------- */
 
 .loading-screen {

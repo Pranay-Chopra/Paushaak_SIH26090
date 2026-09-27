@@ -1,4 +1,5 @@
 import { HeritageHero } from "@/components/heritage/sections/HeritageHero";
+import { HeritageIntroVideo } from "@/components/heritage/sections/HeritageIntroVideo";
 import { Plea } from "@/components/heritage/sections/Plea";
 import { HeritageProblem } from "@/components/heritage/sections/HeritageProblem";
 import { HeritageSolution } from "@/components/heritage/sections/HeritageSolution";
@@ -14,6 +15,7 @@ export default function HeritagePage() {
     <main>
       <LoadingScreen />
       <HeritageHero />
+      <HeritageIntroVideo />
       <Plea />
       <HeritageProblem />
       <HeritageSolution />

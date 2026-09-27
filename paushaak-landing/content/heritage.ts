@@ -2,11 +2,10 @@
 // retelling of the same PAUSHAAK story. Devanagari carries every Hindi word
 // (never Romanized); English proper nouns are woven in via Devanagari
 // transliteration where natural ("devnagrified English"), plain Latin
-// where a code/number reads better (e.g. "SIH26090"). All Hindi text here
+// where a code/number reads better (e.g. "SIH26197"). All Hindi text here
 // is an original composition, not a reproduction of any existing poet's work.
 
 export const hero = {
-  eyebrow: "Smart India Hackathon 2026 · Problem Statement SIH26090",
   headingHi: "करघे से बाज़ार तक",
   headingEn: "From the Loom to the Marketplace",
   subhead:
@@ -18,8 +17,24 @@ export const hero = {
     alt: "Indian weaver at his loom — a gouache Company School painting, 19th century",
     credit: "Wellcome Collection · CC BY 4.0",
   },
-  primaryCta: { label: "कथा आरम्भ", sub: "Begin the tale", href: "#plea" },
+  primaryCta: { label: "कथा आरम्भ", sub: "Begin the tale", href: "#watch" },
   secondaryCta: { label: "आधुनिक रूप", sub: "The modern site", href: "/classic" },
+} as const;
+
+export const introVideo = {
+  eyebrowHi: "परिचय",
+  eyebrowEn: "Introduction",
+  heading: "देखिए, सुनिए",
+  headingEn: "Watch the Introduction",
+  caption: "A short walkthrough of PAUSHAAK — the problem, the craft, the solution.",
+  // [CONFIRM] a direct video file (e.g. /heritage/intro.mp4, dropped into
+  // public/heritage/). Must be a real file, not a YouTube/Vimeo page — an
+  // iframe embed's controls belong to that platform and can't be re-themed,
+  // which is the whole point of the custom player below. Left blank renders
+  // a placeholder frame instead of an empty player.
+  videoSrc: "",
+  poster: "",
+  confirm: true,
 } as const;
 
 // Three plates tracing clothing across eras — hung through the page like
@@ -128,7 +143,7 @@ export const team = {
 export const footer = {
   colophonHi: "इति पौशाक कथा",
   colophonEn: "Thus ends this telling of the PAUSHAAK tale.",
-  tag: "Smart India Hackathon 2026 · Ministry of Social Justice and Empowerment · SIH26090",
+  tag: "Smart India Hackathon 2026 · AICTE · Heritage & Culture · SIH26197",
 } as const;
 
 export const bard = {

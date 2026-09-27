@@ -1,7 +1,7 @@
 # PAUSHAAK — Landing Page PRD (v2)
 **For: Claude Code (implementation)**
-**Prepared for: Smart India Hackathon 2026 — Problem Statement SIH26090**
-**Ministry of Social Justice and Empowerment — Team P-JANN**
+**Prepared for: Smart India Hackathon 2026 — Problem Statement SIH26197**
+**AICTE — Student Innovation, Heritage & Culture — Team P-JANN**
 
 ---
 
@@ -110,7 +110,7 @@ Build as distinct, componentized sections in this order. Copy below is ready to 
 ### 8.1 Hero
 - Headline: "AI-Driven Market Linkage for Marginalized Artisans"
 - Subhead: the one-liner from Section 2 (or a tightened version).
-- Small tag line: "Smart India Hackathon 2026 · Problem Statement SIH26090 · Ministry of Social Justice and Empowerment"
+- Small tag line: "Smart India Hackathon 2026 · Problem Statement SIH26197 · AICTE · Heritage & Culture"
 - Primary CTA: "View Pitch Deck" → **[CONFIRM: link to hosted PDF/PPT]**
 - Secondary CTA: "See How It Works" → scrolls to Section 8.3
 - Uses the parallax layers from Section 7 and the wordmark asset from Section 9.
@@ -157,7 +157,7 @@ Numbers count up (0 → final value) via GSAP when this section scrolls into vie
 ### 8.8 Footer / CTA
 - Restate mission in one line.
 - Links: Pitch Deck **[CONFIRM URL]**, Contact **[CONFIRM email]**, GitHub/repo if applicable **[CONFIRM]**.
-- "Built for Smart India Hackathon 2026 · SIH26090 · Ministry of Social Justice and Empowerment"
+- "Built for Smart India Hackathon 2026 · SIH26197 · AICTE · Heritage & Culture"
 
 ---
 
@@ -195,7 +195,7 @@ No other imagery (photos, illustrations of people) is included — avoiding stoc
 - **Responsive:** mobile-first; correct at phone width (360–430px), tablet, desktop. No horizontal scroll at any breakpoint. Reduced/disabled parallax on mobile per Section 7.
 - **Accessibility:** semantic HTML landmarks, alt text on all icons/images, color contrast checked against both light and dark token sets (both were chosen to pass comfortably), `prefers-reduced-motion` respected (Section 7), theme toggle keyboard-accessible.
 - **Performance:** GSAP is lightweight but avoid animating layout-triggering properties (animate `transform`/`opacity` only, never `top`/`width` etc.) to keep scroll performance smooth. Self-host fonts. SVGs inlined or `next/image`-optimized where appropriate.
-- **SEO/meta:** proper `<title>`, meta description, Open Graph tags referencing "PAUSHAAK — AI-Driven Market Linkage for Marginalized Artisans, SIH26090," using `wordmark-light.svg` or a rendered PNG as the OG image.
+- **SEO/meta:** proper `<title>`, meta description, Open Graph tags referencing "PAUSHAAK — AI-Driven Market Linkage for Marginalized Artisans, SIH26197," using `wordmark-light.svg` or a rendered PNG as the OG image.
 - **Browser support:** evergreen browsers (Chrome, Safari, Edge, Firefox) — no IE support needed.
 
 ---

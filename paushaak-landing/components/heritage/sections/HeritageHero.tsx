@@ -6,9 +6,6 @@ export function HeritageHero() {
   return (
     <section className="hero-tapestry-bg relative flex min-h-svh flex-col justify-center px-4 py-16 sm:px-8">
       <div className="mx-auto w-full max-w-6xl">
-        <p className="font-display-en mb-8 text-center text-xs uppercase tracking-[0.2em] text-[var(--h-navy)] sm:text-sm">
-          {hero.eyebrow}
-        </p>
         <div className="ink-smudge" style={{ width: 130, top: "2%", left: "6%", transform: "rotate(-10deg)" }} />
 
         <div className="grid items-center gap-10 md:grid-cols-2 md:gap-14">

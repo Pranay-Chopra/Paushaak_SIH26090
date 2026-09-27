@@ -5,12 +5,12 @@
 export const meta = {
   title: "PAUSHAAK — AI-Driven Market Linkage for Marginalized Artisans",
   description:
-    "PAUSHAAK turns a marginalized artisan's spoken description of their product into a polished, market-ready listing, matches them with buyers they'd otherwise never reach, and helps them capture more of the value their work creates. Built for Smart India Hackathon 2026, SIH26090.",
+    "PAUSHAAK turns a marginalized artisan's spoken description of their product into a polished, market-ready listing, matches them with buyers they'd otherwise never reach, and helps them capture more of the value their work creates. Built for Smart India Hackathon 2026, SIH26197.",
   ogImage: "/brand/wordmark-light.svg",
 } as const;
 
 export const hero = {
-  tagline: "Smart India Hackathon 2026 · Problem Statement SIH26090 · Ministry of Social Justice and Empowerment",
+  tagline: "Smart India Hackathon 2026 · Problem Statement SIH26197 · AICTE · Heritage & Culture",
   headline: "AI-Driven Market Linkage for Marginalized Artisans",
   subhead:
     "PAUSHAAK is an AI-driven mobile marketplace that turns a marginalized artisan's spoken description of their product — in their own language — into a polished, market-ready listing, matches them with buyers they'd otherwise never reach, and helps them capture more of the value their work actually creates.",
@@ -27,8 +27,8 @@ export const hero = {
 
 export const marquee = [
   "SMART INDIA HACKATHON 2026",
-  "PROBLEM STATEMENT SIH26090",
-  "MINISTRY OF SOCIAL JUSTICE AND EMPOWERMENT",
+  "PROBLEM STATEMENT SIH26197",
+  "AICTE · HERITAGE & CULTURE",
   "TEAM P-JANN",
 ] as const;
 
@@ -163,5 +163,5 @@ export const footer = {
     contact: { label: "Contact", href: "mailto:", confirm: true },
     repo: { label: "GitHub", href: "#", confirm: true },
   },
-  tag: "Built for Smart India Hackathon 2026 · SIH26090 · Ministry of Social Justice and Empowerment",
+  tag: "Built for Smart India Hackathon 2026 · SIH26197 · AICTE · Heritage & Culture",
 } as const;

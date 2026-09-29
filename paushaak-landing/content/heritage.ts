@@ -21,7 +21,7 @@ export const hero = {
 } as const;
 
 export const links = {
-  github: "https://github.com/Pranay-Chopra/Paushaak_SIH26090",
+  github: "https://github.com/Pranay-Chopra/Paushaak_SIH26197",
   // [CONFIRM] hosted YouTube video/channel URL
   youtube: "#",
 } as const;

@@ -18,7 +18,12 @@ export const hero = {
     credit: "Wellcome Collection · CC BY 4.0",
   },
   primaryCta: { label: "कथा आरम्भ", sub: "Begin the tale", href: "#watch" },
-  secondaryCta: { label: "आधुनिक रूप", sub: "The modern site", href: "/classic" },
+} as const;
+
+export const links = {
+  github: "https://github.com/Pranay-Chopra/Paushaak_SIH26090",
+  // [CONFIRM] hosted YouTube video/channel URL
+  youtube: "#",
 } as const;
 
 export const introVideo = {
@@ -32,7 +37,7 @@ export const introVideo = {
   // iframe embed's controls belong to that platform and can't be re-themed,
   // which is the whole point of the custom player below. Left blank renders
   // a placeholder frame instead of an empty player.
-  videoSrc: "",
+  videoSrc: "/heritage/intro.mp4",
   poster: "",
   confirm: true,
 } as const;

@@ -53,7 +53,7 @@ export function VideoPlayer({ src, poster }: { src: string; poster?: string }) {
         ref={videoRef}
         src={src}
         poster={poster || undefined}
-        className="min-h-0 flex-1 bg-black"
+        className="min-h-0 w-full flex-1 bg-black object-contain"
         playsInline
         onClick={togglePlay}
         onPlay={() => setPlaying(true)}

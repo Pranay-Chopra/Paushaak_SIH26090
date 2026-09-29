@@ -188,6 +188,29 @@
 
 /* ---------- Video player ---------- */
 
+/* A very faint thread-weave crosshatch across the whole intro-video
+   section — since the player itself is now sized to match the portrait
+   clip exactly (no letterboxing), this is what fills the space either
+   side of the narrow vertical frame instead of flat empty background. */
+.video-weave-bg {
+  background-color: var(--h-bg);
+  background-image:
+    repeating-linear-gradient(
+      45deg,
+      rgba(43, 38, 32, 0.07) 0px,
+      rgba(43, 38, 32, 0.07) 1px,
+      transparent 1px,
+      transparent 8px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      rgba(43, 38, 32, 0.07) 0px,
+      rgba(43, 38, 32, 0.07) 1px,
+      transparent 1px,
+      transparent 8px
+    );
+}
+
 /* Themed seek bar for the intro video's custom player — the filled/unfilled
    split is painted inline (per current progress) via the element's own
    `background`, this just supplies the track height and a themed thumb so

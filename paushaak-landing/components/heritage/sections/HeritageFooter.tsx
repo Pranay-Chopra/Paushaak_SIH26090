@@ -1,5 +1,4 @@
-import Link from "next/link";
-import { footer } from "@/content/heritage";
+import { footer, links } from "@/content/heritage";
 
 export function HeritageFooter() {
   return (
@@ -16,12 +15,24 @@ export function HeritageFooter() {
           {footer.tag}
         </p>
 
-        <Link
-          href="/classic"
-          className="font-display-en mt-6 inline-block text-xs uppercase tracking-[0.15em] text-[var(--h-bg)] underline underline-offset-4"
-        >
-          ← Back to the modern site
-        </Link>
+        <div className="mt-6 flex items-center justify-center gap-6">
+          <a
+            href={links.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-display-en text-xs uppercase tracking-[0.15em] text-[var(--h-bg)] underline underline-offset-4"
+          >
+            GitHub
+          </a>
+          <a
+            href={links.youtube}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-display-en text-xs uppercase tracking-[0.15em] text-[var(--h-bg)] underline underline-offset-4"
+          >
+            YouTube
+          </a>
+        </div>
       </div>
     </footer>
   );

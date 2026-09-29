@@ -76,43 +76,48 @@ export const problem = {
   eyebrowEn: "The Plight",
   heading: "Three Walls",
   stats: [
-    { value: "3.2–3.7M", labelHi: "कारीगर", sub: "artisans bound to local, limited markets" },
-    { value: "30–40%", labelHi: "बेरोज़गारी", sub: "of craft-family graduates go unemployed" },
-    { value: "₹20–30K", labelHi: "मासिक आय", sub: "average monthly income — far below fair value" },
+    { value: "6.4–6.9M", labelHi: "कारीगर", sub: "handloom and handicraft artisans across India — nearly two-thirds women" },
+    { value: "30–40%", labelHi: "बेरोज़गारी", sub: "of design graduates go unemployed every year" },
+    { value: "₹20–30K", labelHi: "मासिक आय", sub: "average monthly pay for a graduate — even once placed in a formal role" },
   ],
 } as const;
 
 export const solution = {
   eyebrowHi: "समाधान",
-  eyebrowEn: "The Remedy",
+  eyebrowEn: "Discover India",
   heading: "Four Steps",
   steps: [
     { labelHi: "बोलो", labelEn: "Speak", body: "Describe your craft aloud, in your own tongue." },
     { labelHi: "रचना", labelEn: "Creation", body: "The voice becomes a polished, market-ready listing." },
-    { labelHi: "दर्शन", labelEn: "Vision", body: "A buyer sees the weave as though it stood before them." },
-    { labelHi: "न्याय", labelEn: "Fair Due", body: "A fair price, guided honestly — never a guess." },
+    { labelHi: "दर्शन", labelEn: "Vision", body: "A buyer sees it worn on their own form — before they ever buy." },
+    { labelHi: "मेल", labelEn: "Match", body: "AI matches each buyer with the artisan and design suited to their taste, region and budget." },
   ],
 } as const;
 
 export const differentiation = {
   eyebrowHi: "विशिष्टता",
-  eyebrowEn: "What Sets It Apart",
+  eyebrowEn: "Innovation & Uniqueness",
   heading: "Why This Is Different",
   points: [
     {
-      labelHi: "बारी-बारी से रौशनी",
-      labelEn: "Light, in its turn",
-      body: "Discovery rotates by design — visibility is not only won by whoever already sells the most.",
+      labelHi: "अपने रूप में",
+      labelEn: "Seen on Your Own Form",
+      body: "An AI body model previews how a garment sits on your own height, build and colouring — before you ever buy.",
     },
     {
-      labelHi: "बोली में ही पूरी बात",
-      labelEn: "The whole matter, in speech alone",
-      body: "Cataloguing works entirely by voice, so literacy is never the price of entry.",
+      labelHi: "भरोसे का बाज़ार",
+      labelEn: "A Marketplace Built on Trust",
+      body: "One trusted marketplace serves individual buyers and fashion brands alike — verified sellers, verified craft.",
     },
     {
-      labelHi: "एक धागे से कई राहें",
-      labelEn: "Many paths from a single thread",
-      body: "A pattern licensed, a workshop taught live — income that grows beyond the loom's own hours.",
+      labelHi: "दूर तक पहुँच",
+      labelEn: "Reaching Where Networks Don't",
+      body: "Regional-language support and cached content mean artisans in low-connectivity regions are never left offline.",
+    },
+    {
+      labelHi: "बातचीत से मेल",
+      labelEn: "Matched Through Conversation",
+      body: "A simple conversation is enough to match a buyer with the artisan and design suited to their taste, region and budget.",
     },
   ],
 } as const;
@@ -122,12 +127,13 @@ export const impact = {
   eyebrowEn: "Impact & Numbers",
   heading: "Impact, in Figures",
   stats: [
-    { value: 53.8, prefix: "", suffix: "%", label: "Gross margin per order" },
-    { value: 11.7, prefix: "", suffix: "x", label: "LTV : CAC — sellers" },
-    { value: 6.66, prefix: "", suffix: "x", label: "LTV : CAC — B2B buyers" },
-    { value: 9, prefix: "Month ", suffix: "", label: "Break-even reached by" },
+    { value: 5, prefix: "3–", suffix: "×", label: "Target income growth for onboarded artisans" },
+    { value: 64, prefix: "", suffix: "%", label: "Artisan workforce who are women" },
+    { value: 55, prefix: "", suffix: "%", label: "Design graduates in formal industry roles" },
+    { value: 30, prefix: "", suffix: "%", label: "Design graduates unemployed or off-track" },
   ],
-  disclaimer: "Illustrative, based on model assumptions — not audited figures.",
+  disclaimer:
+    "Artisan and design-graduate figures drawn from Ministry of Textiles data, PIB reporting, and independent coverage in The Hindu and Drishti IAS.",
 } as const;
 
 export const team = {

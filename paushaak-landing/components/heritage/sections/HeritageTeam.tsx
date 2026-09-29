@@ -25,8 +25,17 @@ export function HeritageTeam() {
         <StaggerReveal className="mt-12 grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-6">
           {team.members.map((member, i) => (
             <div key={`${member.name}-${i}`} className="flex flex-col items-center text-center">
-              <div className="aged-frame flex h-20 w-20 items-center justify-center rounded-full bg-[var(--h-bg-deep)]">
-                <User size={28} className="text-[var(--h-navy)]" aria-hidden />
+              <div className="aged-frame flex h-20 w-20 items-center justify-center overflow-hidden rounded-full bg-[var(--h-bg-deep)]">
+                {member.photo ? (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img
+                    src={member.photo}
+                    alt={member.name}
+                    className="h-full w-full object-cover"
+                  />
+                ) : (
+                  <User size={28} className="text-[var(--h-navy)]" aria-hidden />
+                )}
               </div>
               <p className="font-display-en mt-3 text-sm text-[var(--h-navy)]">{member.name}</p>
               <p className="font-display-en text-xs italic text-[var(--h-ink-soft)]">{member.role}</p>

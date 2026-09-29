@@ -22,8 +22,7 @@ export const hero = {
 
 export const links = {
   github: "https://github.com/Pranay-Chopra/Paushaak_SIH26197",
-  // [CONFIRM] hosted YouTube video/channel URL
-  youtube: "#",
+  youtube: "https://youtu.be/Q3LH0xSWL_U",
 } as const;
 
 export const introVideo = {
@@ -141,13 +140,15 @@ export const team = {
   eyebrowEn: "The Court",
   heading: "पी-जन",
   headingEn: "P-JANN",
+  // photo: "" for members whose photo hasn't been supplied yet — renders
+  // the plain icon placeholder below instead of a broken <img>.
   members: [
-    { name: "ओजस्व Koolwal", role: "Leader" },
-    { name: "हर्ष Kumar", role: "Co-Leader" },
-    { name: "प्रणय Chopra", role: "Technical Lead" },
-    { name: "रुद्राक्ष Malav", role: "Ideator" },
-    { name: "श्रेया Singh", role: "Creative Designer" },
-    { name: "माही Shah", role: "UI Designer" },
+    { name: "ओजस्व Koolwal", role: "Leader", photo: "/heritage/team/ojasva.jpg" },
+    { name: "हर्ष Kumar", role: "Co-Leader", photo: "" },
+    { name: "प्रणय Chopra", role: "Technical Lead", photo: "/heritage/team/pranay.jpg" },
+    { name: "रुद्राक्ष Malav", role: "Ideator", photo: "" },
+    { name: "श्रेया Singh", role: "Creative Designer", photo: "/heritage/team/shreya.jpg" },
+    { name: "माही Shah", role: "UI Designer", photo: "/heritage/team/maahi.jpg" },
   ],
 } as const;
 

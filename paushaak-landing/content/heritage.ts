@@ -137,10 +137,10 @@ export const team = {
   headingEn: "P-JANN",
   members: [
     { name: "ओजस्व Koolwal", role: "Leader" },
-    { name: "हर्ष Kumar", role: "Ideator" },
-    { name: "प्रणय Chopra", role: "Technical Expert" },
+    { name: "हर्ष Kumar", role: "Co-Leader" },
+    { name: "प्रणय Chopra", role: "Technical Lead" },
     { name: "रुद्राक्ष Malav", role: "Ideator" },
-    { name: "श्रेया Singh", role: "UI Designer" },
+    { name: "श्रेया Singh", role: "Creative Designer" },
     { name: "माही Shah", role: "UI Designer" },
   ],
 } as const;
